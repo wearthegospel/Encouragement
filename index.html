@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wear The Gospel Encouragement</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+
+        .content {
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 500px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        /* Prayer and Hotline Boxes */
+        .prayer-box, .hotline {
+            background-color: #000; /* Black */
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px solid white; /* White border */
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .button-container button {
+            background-color: #1E3A8A; /* Dark Blue */
+            color: white;
+            border: none;
+            padding: 15px 32px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-container button:hover {
+            background-color: #172554; /* Slightly darker blue */
+        }
+
+        .link {
+             display: inline-block;
+            background-color: black; /* Black background */
+            color: white; /* White text */
+            border: 3px solid white; /* Thick white border */
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+
+        /* Dark Mode */
+        .dark {
+            background-color: #121212;
+            color: white;
+        }
+
+        .light {
+            background-color: white;
+            color: black;
+            border: 3px solid black;
+        }
+    </style>
+</head>
+<body class="dark">
+    <div class="container">
+        <!-- Greeting Section -->
+        <h1>Thank you for scanning the QR code!</h1>
+
+        <!-- Need Encouragement Section -->
+        <div class="content">
+            <h2>Need Encouragement?</h2>
+
+            <!-- Emotion Buttons (Placed directly here) -->
+            <div class="button-container">
+                <button onclick="changeContent('anxious')">Feeling Anxious?</button>
+                <button onclick="changeContent('hopeless')">Feeling Lost?</button>
+                <button onclick="changeContent('alone')">Feeling Alone?</button>
+                <button onclick="changeContent('sad')">Feeling Sad?</button>
+                <button onclick="changeContent('overwhelmed')">Feeling Overwhelmed?</button>
+            </div>
+
+            <div class="image-container">
+                <img id="encouragement-image" src="WTG/encouragement.png" alt="Encouragement Image">
+            </div>
+            <div class="image-container">
+                <img id="verse-image" src="WTG/need-encouragement.png" alt="Bible Verse">
+            </div>
+
+            <!-- Prayer Section -->
+            <div class="prayer-box">
+                <h3>Prayer for You</h3>
+                <p>Dear God, we pray for peace, strength, and hope for this person. May they feel your loving presence and know they are never alone. Amen.</p>
+            </div>
+        </div>
+
+        <!-- Hotlines Section -->
+        <div class="hotline">
+            <h3>Need Help? Call these Hotlines:</h3>
+            <p>National Suicide Prevention: 988</p>
+            <p>Crisis Text Line: Text HOME to 741741</p>
+            <p>Christian Crisis Hotline: 1-800-633-3446</p>
+            <p>Prayer & Support (700 Club): 1-800-700-7000</p>
+        </div>
+
+        <!-- Shop Link -->
+        <a href="https://www.wearthegospel.com" class="link">Shop the Apparel</a>
+    </div>
+
+    <script>
+        function changeContent(feeling) {
+            let encouragementImage = document.getElementById('encouragement-image');
+            let verseImage = document.getElementById('verse-image');
+
+            let images = {
+                anxious: { encouragement: 'WTG/feelinganxious.png', verse: 'WTG/feeling-anxious.png' },
+                hopeless: { encouragement: 'WTG/feelinglost.png', verse: 'WTG/feeling-lost.png' },
+                alone: { encouragement: 'WTG/feelingalone.png', verse: 'WTG/feeling-alone.png' },
+                sad: { encouragement: 'WTG/feelingsad.png', verse: 'WTG/feeling-sad.png' },
+                overwhelmed: { encouragement: 'WTG/feelingoverwhelmed.png', verse: 'WTG/feeling-overwhelmed.png' }
+            };
+
+            if (images[feeling]) {
+                encouragementImage.src = images[feeling].encouragement;
+                verseImage.src = images[feeling].verse;
+            }
+        }
+    </script>
+</body>
+</html>
